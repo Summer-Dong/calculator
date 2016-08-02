@@ -7,8 +7,17 @@
 
 body {
   padding: 0;
+  background: #555555;
 }
 
+/*calculator's style*/
+.row{
+  background-color: #F2F2F2;
+}
+button{
+  height:30px;
+  background-color: #EAEAEA;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
