@@ -4,19 +4,39 @@
   color: #000;
   padding: 0.2em 0;
 }
-
 body {
   padding: 0;
   background: #555555;
 }
-
-/*calculator's style*/
-.row{
+/*calculator's button*/
+.calculator{
+  width: 350px;
+  margin: 30px auto;
   background-color: #F2F2F2;
 }
-button{
-  height:30px;
+.rowLine{
+  width: 300px;
+  margin: auto;
+  background-color: #F2F2F2;
+}
+.col-md-3, .col-md-4, .col-md-8{
+  padding: 2px;
+}
+.buttons,.buttonZero, .buttonsEqual{
+  width: 65px;
+  height:65px;
+  margin-left: 2px;
+  padding: 0;
   background-color: #EAEAEA;
+  text-align: center;
+  font: 25px bold;
+  box-shadow: 2px 2px 2px #888888;
+}
+.buttonZero{
+  width: 138px; 
+}
+.buttonsEqual{
+  height: 133px;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -71,7 +91,7 @@ button{
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 770px;
   }
 
   /* Remove the padding we set earlier */
