@@ -55,7 +55,7 @@ section {
     content: '';
     position: absolute;
     padding-top: 20px;
-    width: 65px;
+    width: 62px;
     height: 40px;
     border-radius: 40%;
     left: 0;
@@ -80,7 +80,7 @@ section {
     box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .checkbox input:checked + label:after {
-    left: 65px;
+    left: 62px;
 }
 .model-1 .checkbox input:checked + label {
     background: #ccc;
