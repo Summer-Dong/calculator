@@ -4,14 +4,24 @@
   color: #000;
   padding: 0.2em 0;
 }
+
 body {
   padding: 0;
   background: #555555;
+}
+/*calculator's Display*/
+textarea{
+  width: 300px;
+  margin: 20px 25px;
+  line-height: 35px;
+  font-size: 30px;
+  text-align: right;
 }
 /*calculator's button*/
 .calculator{
   width: 350px;
   margin: 30px auto;
+  padding-bottom: 30px;
   background-color: #F2F2F2;
 }
 .rowLine{
