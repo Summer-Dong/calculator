@@ -94,7 +94,7 @@ section {
   margin: auto;
   background-color: #F2F2F2;
 }
-.col-md-3, .col-md-4, .col-md-8{
+.col-md-2, .col-md-3, .col-md-4, .col-md-8{
   padding: 2px;
 }
 .buttons,.buttonZero, .buttonsEqual{
@@ -105,6 +105,7 @@ section {
   background-color: #EAEAEA;
   text-align: center;
   font: 25px bold;
+  outline: none;
   box-shadow: 2px 2px 2px #888888;
 }
 .buttonZero{
@@ -112,6 +113,18 @@ section {
 }
 .buttonsEqual{
   height: 133px;
+}
+/*scientific calcu*/
+.buttonS{
+  width: 45px;
+  height:65px;
+  margin-left: 2px;
+  padding: 0;
+  background-color: #EAEAEA;
+  text-align: center;
+  font: 25px bold;
+  outline: none;
+  box-shadow: 2px 2px 2px #888888;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
