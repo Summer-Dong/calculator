@@ -6,7 +6,7 @@
         <textarea rows="2" disabled></textarea>
     </div>
     <!-- the slip button -->
-    <div class="slipButton">
+    <div class="slipButton" ng-click="main.slip()">
         <section class="model-1">       
             <div class="checkbox">           
                 <input type="checkbox"/>
@@ -15,7 +15,7 @@
         </section>
     </div>
     <!-- normal calculator -->
-    <div class="main" ng-show="false">
+    <div class="main" ng-if="main.slip()">
         <div class="row rowLine">
             <div class="col-md-3"><button class="btn buttons">C</button></div>
             <div class="col-md-3"><button class="btn buttons">DEL</button></div>
@@ -51,7 +51,7 @@
     </div>
 
     <!-- scientific calculator -->
-    <div class="main">
+    <div class="main"  ng-if="main.slip()">
         <div class="row rowLine">
             <div class="col-md-2"><button class="btn buttonS">C</button></div>
             <div class="col-md-2"><button class="btn buttonS">DEL</button></div>

@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name calculatorApp.controller:MainCtrl
- * @description
+ * @Summer calculatorApp.controller:MainCtrl
+ * @2016-8-3
  * # MainCtrl
  * Controller of the calculatorApp
  */
 angular.module('calculatorApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('MainCtrl', function() {
+		var vm = this;
+		vm.slipFlag = true;
+		vm.slip = function() {
+			return vm.flag = !vm.flag;
+		}
+	});
