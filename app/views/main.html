@@ -3,8 +3,8 @@
     <a href="https://github.com/Summer-Dong/calculator" id='record'>@Summer</a>
     <!-- the result's display -->
     <div class="screen">
-        <input class="typeIn" type="text" disabled>
-        <input class="result" type="text" disabled>
+        <input class="typeIn" type="text" value={{main.types}} disabled/>
+        <input class="result" type="text" value={{main.results}} disabled>
     </div>
     <!-- the slip button -->
     <div class="slipButton" ng-click="main.slip()">
@@ -24,26 +24,26 @@
             <div class="col-md-3"><button class="btn buttons">×</button></div>
         </div>
         <div class="row rowLine">
-            <div class="col-md-3"><button class="btn buttons">7</button></div>
-            <div class="col-md-3"><button class="btn buttons">8</button></div>
-            <div class="col-md-3"><button class="btn buttons">9</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(7)">7</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(8)">8</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(9)">9</button></div>
             <div class="col-md-3"><button class="btn buttons">+</button></div>
         </div>
         <div class="row rowLine">
-            <div class="col-md-3"><button class="btn buttons">4</button></div>
-            <div class="col-md-3"><button class="btn buttons">5</button></div>
-            <div class="col-md-3"><button class="btn buttons">6</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(4)">4</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(5)">5</button></div>
+            <div class="col-md-3"><button class="btn buttons" ng-click="main.numClick(6)">6</button></div>
             <div class="col-md-3"><button class="btn buttons">-</button></div>
         </div>
         <div class="row rowLine">
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-4"><button class="btn buttons">1</button></div>
-                    <div class="col-md-4"><button class="btn buttons">2</button></div>
-                    <div class="col-md-4"><button class="btn buttons">3</button></div>
+                    <div class="col-md-4"><button class="btn buttons" ng-click="main.numClick(1)">1</button></div>
+                    <div class="col-md-4"><button class="btn buttons" ng-click="main.numClick(2)">2</button></div>
+                    <div class="col-md-4"><button class="btn buttons" ng-click="main.numClick(3)">3</button></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8"><button class="btn buttonZero">0</button></div>
+                    <div class="col-md-8"><button class="btn buttonZero" ng-click="main.numClick(0)">0</button></div>
                     <div class="col-md-4"><button class="btn buttons">.</button></div>
                 </div>
             </div>
