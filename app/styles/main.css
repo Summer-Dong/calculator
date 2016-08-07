@@ -135,6 +135,12 @@ section {
     box-shadow: 2px 2px 2px #888888;
 }
 
+/* footer style */
+.footer p{
+    color: #F2F2F2;
+    font-size: 18px;
+    text-align: right;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header, .marketing, .footer {
     padding-left: 15px;
