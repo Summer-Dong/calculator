@@ -10,4 +10,5 @@
 ####Tools:
   yo + grunt + karma 
   
-  
+####To run:
+ 		grunt serve 
