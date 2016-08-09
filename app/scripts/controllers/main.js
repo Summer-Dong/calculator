@@ -14,7 +14,7 @@ angular.module('calculatorApp')
 		vm.slipFlag = true;
 		vm.results = "0";
 		vm.slip = function() {
-			return vm.flag = !vm.flag;
+			return vm.slipFlag = !vm.slipFlag;
 		};
 		// 数字按钮点击事件
 		vm.numClick = function(num) {
