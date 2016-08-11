@@ -20,4 +20,10 @@ angular.module('calculatorApp')
 		vm.numClick = function(num) {
 			vm.results += num;
 		};
+		//功能键点击事件
+		
+		//"="按键的点击事件，当result框非0时，result内容移到typeIn框；当result框为0时，不做改变
+		vm.equalClick=function(){
+
+		}
 	});
