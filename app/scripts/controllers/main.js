@@ -21,6 +21,7 @@ angular.module('calculatorApp')
 		/*滑动按钮点击事件*/
 		vm.slipFlag = true;
 		vm.slip = function() {
+			vm.results = "0"
 			return vm.slipFlag = !vm.slipFlag;
 		};
 
