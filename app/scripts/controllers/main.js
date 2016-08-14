@@ -30,6 +30,11 @@ angular.module('calculatorApp')
 			vm.results = "0"
 		}
 
+		/*delete按钮点击事件*/
+		vm.delete = function() {
+			vm.results = vm.results.substring(0, vm.results.length - 1);
+		}
+
 		/*数字按钮点击事件*/
 		vm.numClick = function(num) {
 			if (vm.results == "0")
