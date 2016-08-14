@@ -25,6 +25,11 @@ angular.module('calculatorApp')
 			return vm.slipFlag = !vm.slipFlag;
 		};
 
+		/*clear按钮点击事件*/
+		vm.clear = function() {
+			vm.results = "0"
+		}
+
 		/*数字按钮点击事件*/
 		vm.numClick = function(num) {
 			if (vm.results == "0")
