@@ -29,7 +29,8 @@ angular.module('calculatorApp')
 
 		/*clear按钮点击事件*/
 		vm.clear = function() {
-			vm.results = "0"
+			vm.results = "0";
+			vm.typeInFlag = 0;
 		}
 
 		/*delete按钮点击事件*/
