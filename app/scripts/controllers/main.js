@@ -53,9 +53,9 @@ angular.module('calculatorApp')
 				vm.typeInFlag = 1;
 			}
 		}
-	});
-
-	angular.module('calculatorApp')
-	.controller('ScientificCtrl', function() {
+	}).controller('ScientificCtrl', function() {
 		var vs = this;
+		vs.bracket=function(brackets){
+			vs.emit(vm.results+=brackets);
+		}
 	});
