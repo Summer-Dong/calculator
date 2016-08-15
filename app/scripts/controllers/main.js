@@ -42,6 +42,16 @@ angular.module('calculatorApp')
 			if (vm.results == "0")
 				vm.results = "";
 			vm.results += num;
-			vm.typeInFlag=0;
+			vm.typeInFlag = 0;
 		};
+
+		/*+按钮点击事件*/
+		vm.plus = function(symbol) {
+			if(vm.typeInFlag == 0){
+				vm.results += symbol;
+				vm.typeInFlag = 1;
+			}
+		}
+
+		
 	});
