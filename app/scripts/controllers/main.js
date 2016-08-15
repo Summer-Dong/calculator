@@ -53,6 +53,9 @@ angular.module('calculatorApp')
 				vm.typeInFlag = 1;
 			}
 		}
+	});
 
-
+	angular.module('calculatorApp')
+	.controller('ScientificCtrl', function() {
+		var vs = this;
 	});
