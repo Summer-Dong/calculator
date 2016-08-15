@@ -45,13 +45,13 @@ angular.module('calculatorApp')
 			vm.typeInFlag = 0;
 		};
 
-		/*+按钮点击事件*/
-		vm.plus = function(symbol) {
+		/*+、-按钮点击事件*/
+		vm.symbol = function(symbol) {
 			if(vm.typeInFlag == 0){
 				vm.results += symbol;
 				vm.typeInFlag = 1;
 			}
 		}
 
-		
+
 	});
