@@ -17,6 +17,8 @@ angular.module('calculatorApp')
 
 		/*记录是否有等号*/
 		vm.equalFlag = 0;
+		/*记录当前输入是数字还是运算符*/
+		vm.typeInFlag = 0;
 
 		/*滑动按钮点击事件*/
 		vm.slipFlag = true;
@@ -40,5 +42,6 @@ angular.module('calculatorApp')
 			if (vm.results == "0")
 				vm.results = "";
 			vm.results += num;
+			vm.typeInFlag=0;
 		};
 	});
