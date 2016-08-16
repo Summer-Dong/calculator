@@ -8,7 +8,7 @@
   AngularJS + Bootstrap
   
 ####Tools:
-  yo + grunt + karma 
+  NodeJS + grunt + bower + karma 
   
 ####To run:
  		grunt serve 
