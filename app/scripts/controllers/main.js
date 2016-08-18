@@ -52,5 +52,11 @@ angular.module('calculatorApp')
 				vm.results += symbol;
 				vm.typeInFlag = 1;
 			}
+		};
+
+		/*"="的点击事件*/
+		vm.equal = function() {
+			vm.inputs = vm.results + "=";
+			vm.results = eval(vm.results);
 		}
 	});
