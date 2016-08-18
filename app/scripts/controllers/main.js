@@ -48,14 +48,9 @@ angular.module('calculatorApp')
 
 		/*+、-、×、÷按钮点击事件*/
 		vm.symbol = function(symbol) {
-			if(vm.typeInFlag == 0){
+			if (vm.typeInFlag == 0) {
 				vm.results += symbol;
 				vm.typeInFlag = 1;
 			}
-		}
-	}).controller('ScientificCtrl', function() {
-		var vs = this;
-		vs.bracket=function(brackets){
-			vs.emit(vm.results+=brackets);
 		}
 	});
