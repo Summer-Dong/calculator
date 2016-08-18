@@ -38,12 +38,18 @@ angular.module('calculatorApp')
 			vm.results = vm.results.substring(0, vm.results.length - 1);
 		}
 
-		/*数字按钮点击事件*/
+		/*数字按钮和“.”的点击事件*/
 		vm.numClick = function(num) {
 			if (vm.results == "0")
+				if(num!=".")
+					vm.results = "";
+			/*点击数字按钮,有“=”时结果框置空*/
+			if(vm.equalFlag == 1)
 				vm.results = "";
 			vm.results += num;
+			/*当前输入状态为数字，未点击“=”*/
 			vm.typeInFlag = 0;
+			vm.equalFlag = 0;
 		};
 
 		/*+、-、×、÷按钮点击事件*/
@@ -56,6 +62,7 @@ angular.module('calculatorApp')
 
 		/*"="的点击事件*/
 		vm.equal = function() {
+			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
 			vm.results = eval(vm.results);
 		}
