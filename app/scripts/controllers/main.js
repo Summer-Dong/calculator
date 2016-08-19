@@ -61,6 +61,7 @@ angular.module('calculatorApp')
 		};
 
 		/*"="的点击事件*/
+		/*还需对乘除符号进行转换*/
 		vm.equal = function() {
 			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
