@@ -68,7 +68,7 @@ angular.module('calculatorApp')
 
 			vm.results = _.replace(vm.results, '×', '*')
 			vm.results = _.replace(vm.results, '÷', '/')
-			console.log(vm.results);
 			vm.results = eval(vm.results);
+			vm.results = (_.round(vm.results))*1000000/1000000;
 		}
 	});
