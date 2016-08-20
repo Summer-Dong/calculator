@@ -63,9 +63,9 @@ angular.module('calculatorApp')
 		/*"="的点击事件*/
 		/*还需对乘除符号进行转换*/
 		vm.equal = function() {
-			vm.results = _.replace(vm.results, '×', '*');
+			var results = _.replace(vm.results, '×', '*');
 			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
-			vm.results = eval(vm.results);
+			vm.results = eval(results);
 		}
 	});
