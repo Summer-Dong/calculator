@@ -61,7 +61,6 @@ angular.module('calculatorApp')
 		};
 
 		/*"="的点击事件*/
-		/*还需对乘除符号进行转换*/
 		vm.equal = function() {
 			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
@@ -69,6 +68,5 @@ angular.module('calculatorApp')
 			vm.results = _.replace(vm.results, '×', '*')
 			vm.results = _.replace(vm.results, '÷', '/')
 			vm.results = eval(vm.results);
-			vm.results = (_.round(vm.results))*1000000/1000000;
 		}
 	});
