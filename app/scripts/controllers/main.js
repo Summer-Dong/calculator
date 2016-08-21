@@ -20,6 +20,10 @@ angular.module('calculatorApp')
 		/*记录当前输入是数字还是运算符*/
 		vm.typeInFlag = 0;
 
+		/*记录幂函数的两个参数*/
+		vm.powOne = 0;
+		vm.powTwo = 0;
+
 		/*滑动按钮点击事件*/
 		vm.slipFlag = true;
 		vm.slip = function() {
@@ -41,10 +45,10 @@ angular.module('calculatorApp')
 		/*数字按钮和“.”的点击事件*/
 		vm.numClick = function(num) {
 			if (vm.results == "0")
-				if(num!=".")
+				if (num != ".")
 					vm.results = "";
-			// 点击数字按钮,有“=”时结果框置空
-			if(vm.equalFlag == 1)
+				// 点击数字按钮,有“=”时结果框置空
+			if (vm.equalFlag == 1)
 				vm.results = "";
 			vm.results += num;
 			// 当前输入状态为数字，未点击“=”
@@ -60,13 +64,23 @@ angular.module('calculatorApp')
 			}
 		};
 
+		/*"="的模拟点击事件，当计算结果时触发，当有复杂计算时，vm.result的结果值不为null*/
+		vm.result = null;
+		vm.equalMock = function() {
+			var pos = vm.results.indexOf('^');
+			vm.powOne = vm.results.substring(0, pos);
+			vm.powTwo = vm.results.substring(pos + 1, vm.results.length + 1);
+			vm.result = Math.pow(vm.powOne, vm.powTwo);
+		};
 		/*"="的点击事件*/
 		vm.equal = function() {
-			vm.equalFlag = 1;    
+			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
 
 			vm.results = _.replace(vm.results, '×', '*');
 			vm.results = _.replace(vm.results, '÷', '/');
-			vm.results = eval(vm.results);
-		}
+			vm.equalMock();
+			vm.result == null ? vm.results = eval(vm.results) : vm.results = vm.result;
+		};
+
 	});
