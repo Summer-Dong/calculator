@@ -23,6 +23,8 @@ angular.module('calculatorApp')
 		/*记录幂函数的两个参数*/
 		vm.powOne = 0;
 		vm.powTwo = 0;
+		/*记录传入的运算符号*/
+		vm.symbol = null;
 
 		/*滑动按钮点击事件*/
 		vm.slipFlag = true;
@@ -61,16 +63,24 @@ angular.module('calculatorApp')
 			if (vm.typeInFlag == 0) {
 				vm.results += symbol;
 				vm.typeInFlag = 1;
+				vm.symbol = symbol;
 			}
 		};
 
 		/*"="的模拟点击事件，当计算结果时触发，当有复杂计算时，vm.result的结果值不为null*/
 		vm.result = null;
 		vm.equalMock = function() {
-			var pos = vm.results.indexOf('^');
+			var pos = vm.results.indexOf(vm.symbol);
 			vm.powOne = vm.results.substring(0, pos);
 			vm.powTwo = vm.results.substring(pos + 1, vm.results.length + 1);
-			vm.result = Math.pow(vm.powOne, vm.powTwo);
+			if (vm.results.indexOf('^') > 0)
+				vm.result = Math.pow(vm.powOne, vm.powTwo);
+			else if (vm.results.indexOf('√') > 0){
+				if(vm.powOne == null)
+					vm.result = Math.pow(vm.powTwo, 0.5);
+				else
+					vm.result = Math.pow(vm.powTwo, 1/(vm.powOne));
+			}
 		};
 		/*"="的点击事件*/
 		vm.equal = function() {
@@ -80,7 +90,10 @@ angular.module('calculatorApp')
 			vm.results = _.replace(vm.results, '×', '*');
 			vm.results = _.replace(vm.results, '÷', '/');
 			vm.equalMock();
-			vm.result == null ? vm.results = eval(vm.results) : vm.results = vm.result;
+			if(vm.result == null)
+				vm.results = eval(vm.results);
+			else
+				vm.results = vm.result;
 		};
 
 	});
