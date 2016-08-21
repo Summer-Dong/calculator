@@ -25,6 +25,8 @@ angular.module('calculatorApp')
 		vm.powTwo = 0;
 		/*记录传入的运算符号*/
 		vm.symbol = null;
+		/*有幂计算时的结果值*/
+		vm.result = null;
 
 		/*滑动按钮点击事件*/
 		vm.slipFlag = true;
@@ -68,7 +70,9 @@ angular.module('calculatorApp')
 		};
 
 		/*"="的模拟点击事件，当计算结果时触发，当有复杂计算时，vm.result的结果值不为null*/
-		vm.result = null;
+		/*
+			！！！！！！！！！！当第二次点击幂计算运算符时报错！！！！！！！！！！！！！！
+		*/
 		vm.equalMock = function() {
 			var pos = vm.results.indexOf(vm.symbol);
 			vm.powOne = vm.results.substring(0, pos);
@@ -79,6 +83,7 @@ angular.module('calculatorApp')
 				vm.powOne == null ? vm.result = Math.pow(vm.powTwo, 0.5) : vm.result = Math.pow(vm.powTwo, 1/(vm.powOne));
 			}
 		};
+
 		/*"="的点击事件*/
 		vm.equal = function() {
 			vm.equalFlag = 1;
