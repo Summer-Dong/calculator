@@ -76,10 +76,7 @@ angular.module('calculatorApp')
 			if (vm.results.indexOf('^') > 0)
 				vm.result = Math.pow(vm.powOne, vm.powTwo);
 			else if (vm.results.indexOf('√') > 0){
-				if(vm.powOne == null)
-					vm.result = Math.pow(vm.powTwo, 0.5);
-				else
-					vm.result = Math.pow(vm.powTwo, 1/(vm.powOne));
+				vm.powOne == null ? vm.result = Math.pow(vm.powTwo, 0.5) : vm.result = Math.pow(vm.powTwo, 1/(vm.powOne));
 			}
 		};
 		/*"="的点击事件*/
@@ -90,10 +87,7 @@ angular.module('calculatorApp')
 			vm.results = _.replace(vm.results, '×', '*');
 			vm.results = _.replace(vm.results, '÷', '/');
 			vm.equalMock();
-			if(vm.result == null)
-				vm.results = eval(vm.results);
-			else
-				vm.results = vm.result;
+			vm.result == null ? vm.results = eval(vm.results) : vm.results = vm.result;
 		};
 
 	});
