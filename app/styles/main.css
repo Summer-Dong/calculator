@@ -113,7 +113,7 @@ section {
 /*calculator's button*/
 .calculator {
     width: 350px;
-    margin: 30px auto;
+    margin: 30px auto 60px auto;
     padding-bottom: 30px;
     background-color: #F2F2F2;
 }
