@@ -65,8 +65,8 @@ angular.module('calculatorApp')
 			vm.equalFlag = 1;
 			vm.inputs = vm.results + "=";
 
-			vm.results = _.replace(vm.results, '×', '*')
-			vm.results = _.replace(vm.results, '÷', '/')
+			vm.results = _.replace(vm.results, '×', '*');
+			vm.results = _.replace(vm.results, '÷', '/');
 			vm.results = eval(vm.results);
 		}
 	});
