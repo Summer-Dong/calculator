@@ -43,11 +43,11 @@ angular.module('calculatorApp')
 			if (vm.results == "0")
 				if(num!=".")
 					vm.results = "";
-			/*点击数字按钮,有“=”时结果框置空*/
+			// 点击数字按钮,有“=”时结果框置空
 			if(vm.equalFlag == 1)
 				vm.results = "";
 			vm.results += num;
-			/*当前输入状态为数字，未点击“=”*/
+			// 当前输入状态为数字，未点击“=”
 			vm.typeInFlag = 0;
 			vm.equalFlag = 0;
 		};
@@ -62,7 +62,7 @@ angular.module('calculatorApp')
 
 		/*"="的点击事件*/
 		vm.equal = function() {
-			vm.equalFlag = 1;
+			vm.equalFlag = 1;    
 			vm.inputs = vm.results + "=";
 
 			vm.results = _.replace(vm.results, '×', '*');
