@@ -52,7 +52,7 @@ angular.module('calculatorApp')
 			vm.equalFlag = 0;
 		};
 
-		/*+、-、×、÷按钮点击事件*/
+		/*+、-、×、÷、^按钮点击事件*/
 		vm.symbol = function(symbol) {
 			if (vm.typeInFlag == 0) {
 				vm.results += symbol;
