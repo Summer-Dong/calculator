@@ -37,7 +37,7 @@ angular.module('calculatorApp')
 		vm.equal = function() {
 			vm.normalServ.equalFlag = 1;
 			vm.normalServ.inputs = vm.normalServ.results + "=";
-
+			// 替换相关运算符号
 			vm.normalServ.results = _.replace(vm.normalServ.results, '×', '*');
 			vm.normalServ.results = _.replace(vm.normalServ.results, '÷', '/');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'π', 'Math.PI');
@@ -49,9 +49,9 @@ angular.module('calculatorApp')
 				vm.normalServ.results += '/Math.log(10)';
 			}
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'ln', 'Math.log');
-
 			vm.equalMock();
 			vm.scienServ.result == null ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
+			vm.scienServ.result = null;
 		};
 
 	});
