@@ -3,7 +3,6 @@
 angular.module('calculatorApp')
 	.controller('MainCtrl', function(normalCalService, scientificCalService) {
 		var vm = this;
-
 		vm.normalServ = normalCalService;
 		vm.scienServ = scientificCalService;
 
@@ -28,8 +27,8 @@ angular.module('calculatorApp')
 			vm.scienServ.powTwo = vm.normalServ.results.substring(pos + 1, vm.normalServ.results.length + 1);
 			if (vm.normalServ.results.indexOf('^') > 0)
 				vm.scienServ.result = Math.pow(vm.scienServ.powOne, vm.scienServ.powTwo);
-			else if (vm.normalServ.results.indexOf('√') > 0){
-				vm.scienServ.powOne == null ? vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5) : vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1/(vm.scienServ.powOne));
+			else if (vm.normalServ.results.indexOf('√') > 0) {
+				vm.scienServ.powOne == null ? vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5) : vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1 / (vm.scienServ.powOne));
 			}
 		};
 
@@ -44,8 +43,8 @@ angular.module('calculatorApp')
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'sin', 'Math.sin');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'cos', 'Math.cos');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'tan', 'Math.tan');
-			if(vm.normalServ.results.indexOf("log")>=0){
-				vm.normalServ.results = _.replace(vm.normalServ.results, 'log', 'Math.log'); 
+			if (vm.normalServ.results.indexOf("log") >= 0) {
+				vm.normalServ.results = _.replace(vm.normalServ.results, 'log', 'Math.log');
 				vm.normalServ.results += '/Math.log(10)';
 			}
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'ln', 'Math.log');
@@ -55,4 +54,3 @@ angular.module('calculatorApp')
 		};
 
 	});
-	
