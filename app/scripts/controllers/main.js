@@ -42,6 +42,7 @@ angular.module('calculatorApp')
 			vm.normalServ.results = _.replace(vm.normalServ.results, '÷', '/');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'π', 'Math.PI');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'sin', 'Math.sin');
+			vm.normalServ.results = _.replace(vm.normalServ.results, 'cos', 'Math.cos');
 			vm.equalMock();
 			vm.scienServ.result == null ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
 		};
