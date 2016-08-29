@@ -1,4 +1,5 @@
 'use strict';
+// 关于普通操作相关的变量及方法
 angular.module('calculatorApp')
     .service('normalCalService', function() {
         var self = this;
@@ -25,10 +26,10 @@ angular.module('calculatorApp')
 		self.clear = function() {
 			self.results = "0";
 			self.typeInFlag = 0;
-		}
+		};
                   
 		/*delete按钮点击事件*/
 		self.delete = function() {
 			self.results = self.results.substring(0, self.results.length - 1);
-		}
+		};
     });
