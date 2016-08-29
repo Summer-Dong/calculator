@@ -3,14 +3,14 @@
     <a href="https://github.com/Summer-Dong/calculator" id='record'>@Summer</a>
     <!-- the result's display -->
     <div class="screen">
-        <input class="typeIn" type="text" value={{main.inputs}} disabled/>
-        <input class="result" type="text" value={{main.results}} disabled>
+        <input class="typeIn" type="text" value={{main.normalServ.inputs}} disabled/>
+        <input class="result" type="text" value={{main.normalServ.results}} disabled>
     </div>
     <!-- the slip button -->
     <div class="slipButton">
         <section class="model-1">       
             <div class="checkbox">           
-                <input type="checkbox" ng-click="main.slip()"/>
+                <input type="checkbox" ng-click="main.normalServ.slip()"/>
                 <label>科学标准</label>                
             </div>
         </section>

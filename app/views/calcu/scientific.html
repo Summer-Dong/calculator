@@ -1,10 +1,10 @@
-<div class="main"  ng-show="!main.slipFlag">
+<div class="main"  ng-show="!(main.normalServ.slipFlag)">
     <div class="row rowLine">
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.clear()">C</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.delete()">DEL</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('^')">^</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.normalServ.clear()">C</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.normalServ.delete()">DEL</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('^')">^</button></div>
         <div class="col-md-2"><button class="btn buttonS">π</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('√')">√</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('√')">√</button></div>
         <div class="col-md-2"><button class="btn buttonS">1/X</button></div>
     </div>
     <div class="row rowLine">
@@ -12,8 +12,8 @@
         <div class="col-md-2"><button class="btn buttonS" ng-click="bracket('(')">(</button></div>
         <div class="col-md-2"><button class="btn buttonS">)</button></div>
         <div class="col-md-2"><button class="btn buttonS">ln</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('÷')">÷</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('×')">×</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('÷')">÷</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('×')">×</button></div>
     </div>
     <div class="row rowLine">
         <div class="col-md-2"><button class="btn buttonS">cos</button></div>
@@ -21,7 +21,7 @@
         <div class="col-md-2"><button class="btn buttonS" ng-click="main.numClick(8)">8</button></div>
         <div class="col-md-2"><button class="btn buttonS" ng-click="main.numClick(9)">9</button></div>
         <div class="col-md-2"><button class="btn buttonS">%</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('-')">-</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('-')">-</button></div>
     </div>
     <div class="row rowLine">
         <div class="col-md-2"><button class="btn buttonS">tan</button></div>
@@ -29,7 +29,7 @@
         <div class="col-md-2"><button class="btn buttonS" ng-click="main.numClick(5)">5</button></div>
         <div class="col-md-2"><button class="btn buttonS" ng-click="main.numClick(6)">6</button></div>
         <div class="col-md-2"><button class="btn buttonS" ng-click="main.numClick('.')">.</button></div>
-        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbol('+')">+</button></div>
+        <div class="col-md-2"><button class="btn buttonS" ng-click="main.symbolClick('+')">+</button></div>
     </div>
     <div class="row rowLine">
         <div class="col-md-2"><button class="btn buttonS">log</button></div>
