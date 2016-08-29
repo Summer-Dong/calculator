@@ -186,7 +186,13 @@ section {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 10px;
 }
-
+.nav a.active {
+    border-bottom-color: #555;
+}
+.nav a {
+  height: 55px;
+  border-bottom: 4px solid transparent;
+}
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
     margin-top: 0;
