@@ -43,6 +43,7 @@ angular.module('calculatorApp')
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'π', 'Math.PI');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'sin', 'Math.sin');
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'cos', 'Math.cos');
+			vm.normalServ.results = _.replace(vm.normalServ.results, 'tan', 'Math.tan');
 			if(vm.normalServ.results.indexOf("log")>=0){
 				vm.normalServ.results = _.replace(vm.normalServ.results, 'log', 'Math.log'); 
 				vm.normalServ.results += '/Math.log(10)';
