@@ -7,25 +7,16 @@ angular.module('calculatorApp')
 		vm.normalServ = normalCalService;
 		vm.scienServ = scientificCalService;
 
-		/*数字按钮和“.”的点击事件*/
-		vm.numClick = function(num) {
-			if (vm.normalServ.results == "0")
-				if (num != ".")
-					vm.normalServ.results = "";
-			// 点击数字按钮,有“=”时结果框置空
-			if (vm.normalServ.equalFlag == 1)
-				vm.normalServ.results = "";
-			vm.normalServ.results += num;
-			// 当前输入状态为数字，未点击“=”
-			vm.normalServ.typeInFlag = 0;
-			vm.normalServ.equalFlag = 0;
-		};
-
 		/*+、-、×、÷、^按钮点击事件*/
 		vm.symbolClick = function(symbol) {
+			// 点击运算符按钮,有“=”时结果框置空
+			if (vm.normalServ.equalFlag == 1)
+				vm.normalServ.results = "";
+			// 只有当上次输入为数字或者没有进行输入时，显示运算符号并改变输入状态
 			if (vm.normalServ.typeInFlag == 0) {
 				vm.normalServ.results += symbol;
 				vm.normalServ.typeInFlag = 1;
+				// 方便vm.equalMock()方法的逻辑判断
 				vm.normalServ.symbol = symbol;
 			}
 		};
