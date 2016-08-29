@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @Summer calculatorApp.controller:MainCtrl
- * @2016-8-3
- * # MainCtrl
- * Controller of the calculatorApp
- */
 angular.module('calculatorApp')
 	.controller('MainCtrl', function(normalCalService, scientificCalService) {
 		var vm = this;
@@ -34,11 +27,10 @@ angular.module('calculatorApp')
 				vm.normalServ.results += symbol;
 				vm.normalServ.typeInFlag = 1;
 				vm.normalServ.symbol = symbol;
-				console.log(vm.normalServ.symbol)
 			}
 		};
 
-		/*"="的模拟点击事件，当计算结果时触发，当有复杂计算时，vm.scienServ.result的结果值不为null*/
+		/*当有^、√计算时，vm.scienServ.result的结果值不为null，显示在结果框*/
 		vm.equalMock = function() {
 			var pos = vm.normalServ.results.indexOf(vm.normalServ.symbol);
 			vm.scienServ.powOne = vm.normalServ.results.substring(0, pos);
@@ -57,6 +49,7 @@ angular.module('calculatorApp')
 
 			vm.normalServ.results = _.replace(vm.normalServ.results, '×', '*');
 			vm.normalServ.results = _.replace(vm.normalServ.results, '÷', '/');
+			vm.normalServ.results = _.replace(vm.normalServ.results, 'π', 'Math.PI');
 			vm.equalMock();
 			vm.scienServ.result == null ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
 		};
