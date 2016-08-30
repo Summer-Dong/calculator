@@ -11,5 +11,4 @@ angular.module('calculatorApp')
 		/*有幂计算时的结果值*/
 		self.result = null;
 
-
 	});
