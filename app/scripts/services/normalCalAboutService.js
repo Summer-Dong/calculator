@@ -18,7 +18,8 @@ angular.module('calculatorApp')
 		/*滑动按钮点击事件*/
 		self.slipFlag = true;
 		self.slip = function() {
-			self.results = "0"
+			self.inputs = "";
+			self.results = "0";
 			return self.slipFlag = !self.slipFlag;
 		};
 
@@ -31,6 +32,10 @@ angular.module('calculatorApp')
 		/*delete按钮点击事件*/
 		self.delete = function() {
 			self.results = self.results.substring(0, self.results.length - 1);
+			if(isNaN(self.results.slice(self.results.length-1)) && self.results.slice(self.results.length-1)!="π")
+				self.typeInFlag = 1;
+			else
+				self.typeInFlag = 0;
 		};
 
 		/*数字按钮、“.”、“1/”、“pi”的点击事件*/
