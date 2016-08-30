@@ -38,7 +38,7 @@ angular.module('calculatorApp')
 				self.typeInFlag = 0;
 		};
 
-		/*数字按钮、“.”、“1/”、“pi”的点击事件*/
+		/*数字按钮、“.”、“1/”、“pi”、“(”、“)”的点击事件*/
 		self.numClick = function(num) {
 			if ((self.results == "0" && num!=".") || self.equalFlag == 1)
 				self.results = "";
