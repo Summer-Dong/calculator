@@ -35,11 +35,7 @@ angular.module('calculatorApp')
 
 		/*数字按钮、“.”、“1/”、“pi”的点击事件*/
 		self.numClick = function(num) {
-			if (self.results == "0")
-				if (num != ".")
-					self.results = "";
-				// 点击数字按钮,有“=”时结果框置空
-			if (self.equalFlag == 1)
+			if ((self.results == "0" && num!=".") || self.equalFlag == 1)
 				self.results = "";
 			self.results += num;
 			// 当前输入状态为数字，未点击“=”
