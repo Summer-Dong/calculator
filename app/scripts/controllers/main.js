@@ -30,10 +30,7 @@ angular.module('calculatorApp')
 			if (vm.normalServ.results.indexOf('^') > 0)
 				vm.scienServ.result = Math.pow(vm.scienServ.powOne, vm.scienServ.powTwo);
 			else if (vm.normalServ.results.indexOf('√') >= 0) {
-				if(vm.scienServ.powOne == "")
-					vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5);
-				else
-					vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1 / (vm.scienServ.powOne));
+				(vm.scienServ.powOne == "") ? vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5) : vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1 / (vm.scienServ.powOne));
 			}
 		};
 
@@ -53,11 +50,9 @@ angular.module('calculatorApp')
 				vm.normalServ.results += '/Math.log(10)';
 			}
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'ln', 'Math.log');
+			// 对是否有复杂计算进行判断，若有，显示相应结果并将结果置空
 			vm.equalMock();
-			if(vm.scienServ.result == null)
-				vm.normalServ.results = eval(vm.normalServ.results);
-			else
-				vm.normalServ.results = vm.scienServ.result;
+			(vm.scienServ.result == null) ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
 			vm.scienServ.result = null;
 		};
 
