@@ -9,8 +9,10 @@ angular.module('calculatorApp')
 		/*+、-、×、÷、^按钮点击事件*/
 		vm.symbolClick = function(symbol) {
 			// 点击运算符按钮,有“=”时结果框置空
-			if (vm.normalServ.equalFlag == 1)
+			if (vm.normalServ.equalFlag == 1){
 				vm.normalServ.results = "";
+				vm.normalServ.equalFlag = 0;
+			}
 			// 只有当上次输入为数字或者没有进行输入时，显示运算符号并改变输入状态
 			if (vm.normalServ.typeInFlag == 0) {
 				vm.normalServ.results += symbol;
@@ -27,8 +29,11 @@ angular.module('calculatorApp')
 			vm.scienServ.powTwo = vm.normalServ.results.substring(pos + 1, vm.normalServ.results.length + 1);
 			if (vm.normalServ.results.indexOf('^') > 0)
 				vm.scienServ.result = Math.pow(vm.scienServ.powOne, vm.scienServ.powTwo);
-			else if (vm.normalServ.results.indexOf('√') > 0) {
-				vm.scienServ.powOne == null ? vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5) : vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1 / (vm.scienServ.powOne));
+			else if (vm.normalServ.results.indexOf('√') >= 0) {
+				if(vm.scienServ.powOne == "")
+					vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 0.5);
+				else
+					vm.scienServ.result = Math.pow(vm.scienServ.powTwo, 1 / (vm.scienServ.powOne));
 			}
 		};
 
@@ -49,7 +54,10 @@ angular.module('calculatorApp')
 			}
 			vm.normalServ.results = _.replace(vm.normalServ.results, 'ln', 'Math.log');
 			vm.equalMock();
-			vm.scienServ.result == null ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
+			if(vm.scienServ.result == null)
+				vm.normalServ.results = eval(vm.normalServ.results);
+			else
+				vm.normalServ.results = vm.scienServ.result;
 			vm.scienServ.result = null;
 		};
 
