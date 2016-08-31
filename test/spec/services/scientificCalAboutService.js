@@ -1,22 +1,23 @@
 'use strict';
 
-describe('Service: scientificCalService', function() {
+describe('Service: scienServ', function() {
 
-	var scientificCalService;
 	beforeEach(module('calculatorApp'));
-
+	
+	var scienServ;
+	
 	beforeEach(inject(function(_scientificCalService_) {
-		scientificCalService = _scientificCalService_;
+		scienServ = _scientificCalService_;
 	}));
 
 	it('should init some key values', function() {
 		// given
-		scientificCalService.powOne = 0;
-		scientificCalService.powTwo = 0;
-		scientificCalService.result = null;
+		scienServ.powOne = 0;
+		scienServ.powTwo = 0;
+		scienServ.result = null;
 		// then
-		expect(scientificCalService.powOne).toBe(0);
-		expect(scientificCalService.powTwo).toBe(0);
-		expect(scientificCalService.result).toBe(null);
+		expect(scienServ.powOne).toBe(0);
+		expect(scienServ.powTwo).toBe(0);
+		expect(scienServ.result).toBe(null);
 	});
 });
