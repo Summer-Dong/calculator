@@ -11,7 +11,7 @@ describe('directive: scientificCalcu', function() {
     }));
 
     it('should show the right attr of scientificCalcu directive', function($compile) {
-		var scientificCalcu = $compile('<normal-calcu></normal-calcu>')(scope);
+		var scientificCalcu = $compile('<scientific-calcu></scientific-calcu>')(scope);
 		scope.$digest();
         
         expect(normalCalcu.restrict).toBe("EA");
