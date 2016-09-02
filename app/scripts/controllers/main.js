@@ -53,7 +53,10 @@ angular.module('calculatorApp')
 			// 对是否有复杂计算进行判断，若有，显示相应结果并将结果置空
 			vm.equalMock();
 			(vm.scienServ.result == null) ? vm.normalServ.results = eval(vm.normalServ.results) : vm.normalServ.results = vm.scienServ.result;
+			// 当有^、√计算时，还原vm.scienServ.result的初始值，否则后续判断会出错
 			vm.scienServ.result = null;
+			 
+			vm.normalServ.results = Math.round(vm.normalServ.results*1000000)/1000000;
 		};
 
 	});

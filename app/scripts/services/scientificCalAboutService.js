@@ -1,5 +1,5 @@
 'use strict';
-// 关于科学计算器相关的变量及方法
+// 关于科学计算器相关的变量
 angular.module('calculatorApp')
 	.value('scientificCalService', function() {
 		var self = this;
